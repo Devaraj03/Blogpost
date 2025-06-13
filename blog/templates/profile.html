@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} 
+{% block title %}profile{% endblock %}
+{% block body %}
+{% include 'nav2.html' %}
+<br>
+<div style="padding-left: 11%;padding-right: 12%;">
+{% for msg in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+   <strong>Hey!  </strong>{{msg}}
+   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+{% endfor %}
+</div>
+{% if user.is_authenticated %}
+<div class="container">
+    <h4 style="padding-left: 3%;"><u>Profile</u></h4>
+   <t  style="padding-left: 3%;">Name : {{user.username}}</t>
+</div>
+<br>
+<h2 class="text-center"><u>Keep Post</u></h2>
+<br>
+<div style="padding-left: 11%;padding-right: 12%; background-color: rgb(233, 233, 233);
+padding-top: 10px;border-style:outset;padding-bottom: 20px;
+">
+   <form  method="POST">
+      {% csrf_token %}
+      {{blogpost|crispy}}
+      <br>
+      <input type="submit" class="btn btn-primary">
+   </form>
+</div> 
+{% else %}
+<h2 class="text-center">Hi user, please do login or If you don't have account, you can signup</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endif %}
+<br>
+{% include 'footer.html' %}
+{% endblock %}

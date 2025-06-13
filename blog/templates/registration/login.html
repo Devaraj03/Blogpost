@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %} 
+{% block title %}Login{% endblock %}
+{% block body %}
+{% include 'loginnav.html' %}
+    <br>
+    <br>
+    <br>
+    <div style="padding-left: 10.5%;padding-right: 10.5%;">
+<div class="container">
+    <form method="POST" class="uniform">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <input type="submit" class="btn btn-primary"/>
+    </form>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% include 'footer.html' %}
+{% endblock %}
