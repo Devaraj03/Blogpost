@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u69u6aa&3z3h1jco*phc5_wr@^n$w)(zc3z**&2ct*cib=i0!o
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-
+DEBUG = False
 
 # Application definition
 
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+   'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'website.urls'
@@ -129,7 +129,7 @@ STATIC_URL = '/thumbnail/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
-STATIC_ROOT=os.path.join(BASE_DIR,'thumbnail')
+#STATIC_ROOT=os.path.join(BASE_DIR,'thumbnail')
 
 # Static files
 STATIC_URL = '/static/'
@@ -139,7 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ALLOWED_HOSTS = ['Devpro.onrender.com']
 
 # DEBUG mode
-DEBUG = False
+
 
 
 
